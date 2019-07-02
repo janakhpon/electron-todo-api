@@ -23,6 +23,12 @@ mongoose.connect(db, {useNewUrlParser : true}).then(() => {
     console.log(`MongoDB connection error : ${err} on : ${db}`);
 })
 
+//path to html file
+app.use(express.static("public"));
+app.get('/', function (req, res) {
+  res.sendFile('index.html');
+});
+
 
 //declare route name
 app.use('/api/task', task);
