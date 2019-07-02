@@ -10,10 +10,6 @@
       rel="stylesheet"
       href="https://cdn.rawgit.com/Dogfalo/materialize/master/dist/css/materialize.min.css"
     />
-    <link
-      href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet"
-    />
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
@@ -30,38 +26,28 @@
                 <h2>API END POINTS</h2>
                 <div>
                   <code>
-                    axios.get('/api/task') //get all tasks
+                    axios.get('/api/task')      //get all tasks
                   </code>
                 </div>
                 <div>
                   <code>
-                    axios.get('/api/task') //get all tasks
+                    axios.get('/api/task/:id')      //get specifice task by ID
                   </code>
                 </div>
                 <div>
                   <code>
-                    axios.get('/api/task') //get all tasks
+                    axios.post('/api/task')       //add a new task
                   </code>
                 </div>
                 <div>
                   <code>
-                    axios.get('/api/task') //get all tasks
+                    axios.put('/api/task/:id')      //update ID selected task
                   </code>
                 </div>
 
                 <div>
                   <code>
-                    axios.get('/api/task') //get all tasks
-                  </code>
-                </div>
-                <div>
-                  <code>
-                    axios.get('/api/task') //get all tasks
-                  </code>
-                </div>
-                <div>
-                  <code>
-                    axios.get('/api/task') //get all tasks
+                    axios.delete('/api/task/:id')       //delete ID selected task
                   </code>
                 </div>
               </div>
