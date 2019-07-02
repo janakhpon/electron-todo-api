@@ -4,7 +4,7 @@
   "description": "'electron todo api'",
   "main": "server.js",
   "scripts": {
-    "test": "'working'",
+    "test": "working",
     "start": "node server.js"
   },
   "repository": {
