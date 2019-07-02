@@ -1,5 +1,5 @@
 # electron-todo-api
- `electron-todo-api` is the backend api for `electron-todo-app` and allow to be requested without difficulty.The main purpose is to test out that electron CRUD would be easy or not with simple todo list app.Though it is pretty simple and useless i hope it might be a bit help for you too. Here is a github example demo for [HEROKU_DEPLOYMENT](https://intense-inlet-82778.herokuapp.com/)
+ `electron-todo-api` is the backend api for `electron-todo-app` and allow to be requested without difficulty.The main purpose is to test out that electron CRUD would be easy or not with simple todo list app.Though it is pretty simple and useless i hope it might be a bit help for you too. Here is a github example demo for [HEROKU_DEPLOYMENT](https://electron-todo-api.herokuapp.com/)
 
 
 
