@@ -47,6 +47,12 @@ router.post("/", (req, res) => {
   newtask.save().then(task => res.json(task));
 });
 
+
+
+// @route   task api/tasks
+// @desc    Create task
+// @access  Private
+
 router.put("/:id", (req, res) => {
   const { errors, isValid } = validatetaskInput(req.body);
   if (!isValid) {
@@ -67,6 +73,7 @@ router.put("/:id", (req, res) => {
       res.status(404).json({ error: `${err},failed to update!` });
     });
 });
+
 
 // @route   DELETE api/tasks/:id
 // @desc    Delete task
