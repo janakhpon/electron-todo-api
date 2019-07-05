@@ -22,7 +22,7 @@ router.get("/", (req, res) => {
 // @route   GET api/tasks/:id
 // @desc    Get task by id
 // @access  Public
-router.get("/:id", (req, res) => {
+router.get("/ID/:id", (req, res) => {
   task
     .findById(req.params.id)
     .then(task => res.json(task))
@@ -30,6 +30,24 @@ router.get("/:id", (req, res) => {
       res.status(404).json({ notaskfound: "No task found with that ID" })
     );
 });
+
+
+
+// @route   GET api/tasks/:id
+// @desc    Get task by id
+// @access  Public
+router.get("/text", (req, res) => {  
+  task
+    .find({text: { $regex: '.*' + req.body.text + '.*' } }).limit(5)
+    .then(task => res.json(task))
+    .catch(err =>
+      res.status(404).json({ notaskfound: "No task match with that word" })
+    );
+});
+
+
+
+
 
 // @route   task api/tasks
 // @desc    Create task
@@ -53,14 +71,12 @@ router.post("/", (req, res) => {
 // @desc    Create task
 // @access  Private
 
-router.put("/:id", (req, res) => {
+router.put("/ID/:id", (req, res) => {
   const { errors, isValid } = validatetaskInput(req.body);
   if (!isValid) {
     return res.status(400).json(errors);
   }
 
- 
-    
   task
     .findOneAndUpdate({ _id: req.params.id }, req.body, {
       upsert: true,
@@ -77,7 +93,7 @@ router.put("/:id", (req, res) => {
 
 // @route   DELETE api/tasks/:id
 // @desc    Delete task
-router.delete("/:id", (req, res) => {
+router.delete("/ID/:id", (req, res) => {
   task
     .findById(req.params.id)
     .then(task => {
