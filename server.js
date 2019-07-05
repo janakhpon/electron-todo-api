@@ -23,15 +23,9 @@ mongoose.connect(db, {useNewUrlParser : true}).then(() => {
     console.log(`MongoDB connection error : ${err} on : ${db}`);
 })
 
-//path to html file
-app.use(express.static("public"));
-app.get('/', function (req, res) {
-  res.sendFile('index.html');
-});
-
 //Allow XHttp request 
 app.use(function(req, res, next) {
-  r//es.header('Access-Control-Allow-Origin', 'http://localhost:8080/');
+    //res.header('Access-Control-Allow-Origin', 'http://localhost:8080/');
   res.header("Access-Control-Allow-Origin", "*");
   res.header(
     "Access-Control-Allow-Headers",
@@ -42,13 +36,15 @@ app.use(function(req, res, next) {
 });
 
 
+//path to html file
+app.use(express.static("public"));
+app.get('/', function (req, res) {
+  res.sendFile('index.html');
+});
+
 
 //declare route name
 app.use('/api/task', task);
-
-
-
-
 
 //declare port
 port = process.env.PORT || 3000;
