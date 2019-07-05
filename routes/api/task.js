@@ -36,9 +36,9 @@ router.get("/ID/:id", (req, res) => {
 // @route   GET api/tasks/:id
 // @desc    Get task by id
 // @access  Public
-router.get("/text", (req, res) => {  
+router.get("/text/:text", (req, res) => {  
   task
-    .find({text: { $regex: '.*' + req.body.text + '.*' } }).limit(5)
+    .find({text: { $regex: '.*' + req.params.text + '.*' } }).limit(5)
     .then(task => res.json(task))
     .catch(err =>
       res.status(404).json({ notaskfound: "No task match with that word" })
