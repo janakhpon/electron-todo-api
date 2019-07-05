@@ -36,6 +36,7 @@ app.use('/api/task', task);
 
 //Allow XHttp request 
 app.use(function(req, res, next) {
+  res.header('Access-Control-Allow-Origin', 'http://localhost:8080/');
   res.header("Access-Control-Allow-Origin", "*");
   res.header(
     "Access-Control-Allow-Headers",
