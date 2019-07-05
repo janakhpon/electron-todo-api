@@ -29,11 +29,6 @@ app.get('/', function (req, res) {
   res.sendFile('index.html');
 });
 
-
-//declare route name
-app.use('/api/task', task);
-
-
 //Allow XHttp request 
 app.use(function(req, res, next) {
   r//es.header('Access-Control-Allow-Origin', 'http://localhost:8080/');
@@ -45,6 +40,13 @@ app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Methods", "GET,POST,DELETE,PUT");
   next();
 });
+
+
+
+//declare route name
+app.use('/api/task', task);
+
+
 
 
 
